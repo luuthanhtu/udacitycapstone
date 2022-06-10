@@ -17,6 +17,9 @@ import {
 import { createTodo, deleteTodo, getTodos, patchTodo } from '../api/todos-api'
 import Auth from '../auth/Auth'
 import { Todo } from '../types/Todo'
+import ReactPlayer from 'react-player'
+import { Player } from "video-react";
+import "video-react/dist/video-react.css";
 
 interface TodosProps {
   auth: Auth
@@ -97,7 +100,9 @@ export class Todos extends React.PureComponent<TodosProps, TodosState> {
         loadingTodos: false
       })
     } catch (e) {
-      alert(`Failed to fetch todos: ${e.message}`)
+      if (e instanceof Error) {
+        alert(`Failed to fetch todos: ${e.message}`)
+    }
     }
   }
 
@@ -195,6 +200,16 @@ export class Todos extends React.PureComponent<TodosProps, TodosState> {
               {todo.attachmentUrl && (
                 <Image src={todo.attachmentUrl} size="small" wrapped />
               )}
+              {todo.attachmentUrl && (
+                <Player
+                // playsInline
+                // poster="./assets/poster.png"
+                src={todo.attachmentUrl}
+                fluid={false}
+                height={200}
+                width={400}
+              />
+              )}              
               <Grid.Column width={16}>
                 <Divider />
               </Grid.Column>
