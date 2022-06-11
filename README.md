@@ -15,7 +15,7 @@ New Features:
     ![alt text](images/DestinationBucket.png)
 
   Display Video:
-    ![alt text](images/CICD-PROCESS.png)
+    ![alt text](images/DosplayVideo.png)
 
 # Containter
 
