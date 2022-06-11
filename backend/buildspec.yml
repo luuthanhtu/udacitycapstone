@@ -7,8 +7,6 @@ phases:
       nodejs: 12
     commands:
       - npm install -g serverless@2.21.1
-      - export SERVERLESS_ACCESS_KEY=
-      - cd backend
       - npm update --save
       - npm audit fix
   build:
