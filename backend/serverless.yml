@@ -215,7 +215,7 @@ functions:
           - "*"
 
   s3Uploader:
-    handler: handler.s3Uploader
+    handler: src/s3/handler.s3Uploader
     name: StreammingS3
     events:
       - s3:
